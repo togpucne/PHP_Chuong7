@@ -33,6 +33,9 @@
             case 'xoagiohang':
                 include './controller/xoagiohang.php';
                 break;
+            case 'xoasanpham':
+                    include './controller/xoasanpham.php';
+                    break;
             case 'thongtindathang':
                     include './view/thongtindathang.php';
                     break;

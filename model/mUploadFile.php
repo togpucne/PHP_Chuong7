@@ -42,7 +42,7 @@
 
         }
 
-        public function xoaFile($filePath ){
+        public function xoaFile($filePath){
             if(file_exists($filePath)){
                 if(unlink($filePath)){
                     return true;
