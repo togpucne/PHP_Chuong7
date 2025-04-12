@@ -19,8 +19,8 @@
                         $p = new cSanPham();
                         $result = $p->getCongTy();
                         echo ' <center>
-            <h5>Công ty</h5>
-        </center>';
+                           <h5>Công ty</h5>
+                        </center>';
                         if (!$result) {
                             echo 'Chưa có dữ liệu';
                             return;
@@ -39,6 +39,7 @@
                     echo '<li><a href="index.php?act=xuLyDangXuat">Đăng Xuất</a></li>';
 
                     echo '<li><a href="index.php?act=gioHang">Giỏ Hàng</a></li>';
+                    
                     
 
                     if (!class_exists('cSanPham')) {
@@ -59,6 +60,7 @@
                 }else if(isset($_SESSION['admin'])){
                     echo '<li><a href="index.php?act=xuLyDangXuat">Đăng Xuất</a></li>';
                     echo '<li><a href="index.php?act=quanLySanPham">Quản lý sản phẩm</a></li>';
+                    echo '<li><a href="index.php?act=thongkemuahang">Thống kê mua hàng</a></li>';
 
 
                 } else {

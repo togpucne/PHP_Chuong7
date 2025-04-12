@@ -59,6 +59,9 @@
             case 'themgiohang':
                         include './controller/themgiohang.php';
                         break;
+            case 'thongkemuahang':
+                include './controller/thongkemuahang.php';
+                break;  
             case 'gioHang':
                 include './view/gioHang.php';
                 break;  
