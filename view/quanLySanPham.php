@@ -109,7 +109,9 @@
                 echo '<tr>';
                 echo '<td>' . $index . '</td>';
 
-                echo '<td><img src="' . $row['hinh'] . '" width="100" height="100" alt="Hình ảnh"></td>';
+                echo '<td><img src="' . $row['hinh'] . '" width="100" height="100" alt="Hình ảnh">
+                  
+                </td>';
                 echo '<td>' . $row['tensp'] . '</td>';
                 echo '<td>' . $row['gia'] . '</td>';
                 echo '<td>' . $row['giamgia'] . '</td>';

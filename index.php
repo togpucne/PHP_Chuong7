@@ -36,12 +36,18 @@
             case 'xoasanpham':
                     include './controller/xoasanpham.php';
                     break;
+            case 'capnhatsanpham':
+                    include './view/capnhatsanpham.php';
+                    break;
             case 'thongtindathang':
                     include './view/thongtindathang.php';
                     break;
             case 'xuLyDatHang':
                         include './controller/xuLyDatHang.php';
                         break;
+            case 'capnhatsanphamAdmin':
+                include './controller/capnhatsanphamAdmin.php';
+                break;
 
             case 'capnhat':
                     include './controller/capnhat.php';

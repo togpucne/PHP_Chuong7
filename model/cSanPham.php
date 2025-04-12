@@ -46,6 +46,24 @@
 
         }
 
+        public function updateDB($idsp,$tensp, $gia, $hinh, $mota, $giamgia,$iddm, $soLuong ){
+            $p = new cKetNoi();
+            $conn = $p->ketNoi();
+            $sql = " UPDATE  sanpham 
+            SET tensp = '$tensp', gia = '$gia', mota = '$mota', giamgia = '$giamgia', iddm = '$iddm', hinh = '$hinh', soLuong = '$soLuong'
+            WHERE idsp = '$idsp'";
+            
+            
+            $result = $conn->query($sql);
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+
+
+        }
+
         public function deleteDB($idsp){
             $p = new cKetNoi();
             $conn = $p->ketNoi();
