@@ -59,8 +59,14 @@
             case 'themgiohang':
                         include './controller/themgiohang.php';
                         break;
+            case 'muaHang':
+                            include './view/muaHang.php';
+                            break;
             case 'thongkemuahang':
                 include './controller/thongkemuahang.php';
+                break;  
+            case 'xuLyMuaHang':
+                include './controller/xuLyMuaHang.php';
                 break;  
             case 'gioHang':
                 include './view/gioHang.php';

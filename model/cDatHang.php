@@ -9,14 +9,14 @@ class cDatHang
         $idkh = $_COOKIE['idkh'];
         $p = new cKetNoi();
         $conn = $p->ketNoi();
-        $check = $conn->query("SELECT * FROM khachhang WHERE idkh = '$idkh'");
+        $check = $conn->query("SELECT * FROM khachhang WHERE iduser = '$idkh'");
         $sql = '';
 
         if ($check->num_rows > 0) {
             $sql = "UPDATE khachhang 
                 SET ten = '$ten', hodem = '$hodem', diachi = '$diachi', 
                     diachinhanhang = '$diachinhanhang', dienthoai = '$dienthoai' 
-                WHERE idkh = '$idkh'";
+                WHERE iduser = '$idkh'";
                
 
         } else {

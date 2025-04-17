@@ -48,7 +48,7 @@
             echo '</tr>';
         }
         echo '</table>';
-        echo '<center style="margin-top: 30px"><a href="index.php?act=thongtindathang" class="btn btn-success" )">Đặt hàng</a></center>';
+        echo '<center style="margin-top: 30px"><a href="index.php?act=muaHang" class="btn btn-success" )">Mua hàng</a></center>';
     } else {
         echo '<p>Giỏ hàng của bạn đang trống.</p>';
     }

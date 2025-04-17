@@ -42,6 +42,18 @@ class cNguoiDung
             return false;
         }
     }
+
+    public function mTaiKhoan($idkh){
+        $p = new cKetNoi();
+        $conn = $p->ketNoi();
+        $sql = 'SELECT * FROM khachhang WHERE iduser = "'.$idkh.'"';
+        $result = $conn->query($sql);
+        if($result->num_rows>0){
+            return $result;
+        };
+        return false;
+
+    }
     
     
 
