@@ -17,6 +17,14 @@
     $nguoidung = new cNguoiDung();
     $idkh = $_COOKIE['idkh'];
     $resultNguoiDung = $nguoidung->mTaiKhoan($idkh);
+    if(!$resultNguoiDung){
+        echo '<script>
+        alert("Bạn cần thêm địa chỉ mua hàng!");
+        history.back();
+        </script>';
+        return;
+    }
+
     if($resultNguoiDung->num_rows>0){
         while($row = $resultNguoiDung->fetch_assoc()){
             $ten = $row['ten'];

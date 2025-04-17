@@ -28,8 +28,9 @@
                 echo '</tr>';
             }
         } else {
-            echo '<tr><td colspan="3">Không tìm thấy thông tin tài khoản!</td></tr>';
+            echo '<tr><td colspan="3">Không tìm thấy thông tin tài khoản! ';
             echo '<a href="index.php?act=thongtindathang">Thêm thông tin nhận hàng</a>';
+            echo '</td></tr>';
         }
         ?>
     </table>
