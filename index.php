@@ -2,8 +2,21 @@
     session_start();
     include './view/header.php';
     include './view/menu.php';
+
+    
+ 
+
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
+        $array = ['quanLySanPham', 'thongkemuahang', 'themsanpham', 'capnhatsanpham', 'capnhatsanphamAdmin'];
+        $admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : null;
+        if (in_array($act, $array) && !isset($_SESSION['admin'])) {
+            header('Location: index.php?act=dangnhap');
+            exit();
+            return;
+        }
+        
+        
         switch ($act) {
             case 'dangky':
                 include './view/dangky.php';

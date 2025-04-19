@@ -13,28 +13,31 @@
                         echo '<li><a href="index.php?act=gioHang">Giỏ Hàng</a></li>';
 
 
-                        if (!class_exists('cSanPham')) {
-                            include './model/cSanPham.php';
-                        }
-                        $p = new cSanPham();
-                        $result = $p->getCongTy();
-                        echo ' <center>
-                           <h5>Công ty</h5>
-                        </center>';
-                        if (!$result) {
-                            echo 'Chưa có dữ liệu';
-                            return;
-                        }
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-                                echo '<li><a href="index.php?iddm=' . $row['iddm'] . '">' . $row['tendanhmuc'] . '</a></li>';
-                            }
-                        }
+                       
                     } else {
 
                         echo '<li><a href="index.php?act=dangky">Đăng Ký</a></li>
                                         <li><a href="index.php?act=dangnhap">Đăng Nhập</a></li>';
                     }
+                    if (!class_exists('cSanPham')) {
+                        include './model/cSanPham.php';
+                    }
+                    $p = new cSanPham();
+                    $result = $p->getCongTy();
+                    echo ' <center>
+                       <h5>Công ty</h5>
+                    </center>';
+                    if (!$result) {
+                        echo 'Chưa có dữ liệu';
+                        return;
+                    }
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<li><a href="index.php?iddm=' . $row['iddm'] . '">' . $row['tendanhmuc'] . '</a></li>';
+                        }
+                    }
+    
+                    
                 } else if (isset($_SESSION['logIn']) && !isset($_SESSION['admin'])) {
                     echo '<li><a href="index.php?act=xuLyDangXuat">Đăng Xuất</a></li>';
 
@@ -67,8 +70,26 @@
                 } else {
                     echo '<li><a href="index.php?act=dangky">Đăng Ký</a></li>
                             <li><a href="index.php?act=dangnhap">Đăng Nhập</a></li>';
+                            if (!class_exists('cSanPham')) {
+                                include './model/cSanPham.php';
+                            }
+                            $p = new cSanPham();
+                            $result = $p->getCongTy();
+                            echo ' <center>
+                               <h5>Công ty</h5>
+                            </center>';
+                            if (!$result) {
+                                echo 'Chưa có dữ liệu';
+                                return;
+                            }
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo '<li><a href="index.php?iddm=' . $row['iddm'] . '">' . $row['tendanhmuc'] . '</a></li>';
+                                }
+                            }
+            
                 }
-
+              
                 ?>
             </ul>
         </div>
