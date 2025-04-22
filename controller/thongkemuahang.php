@@ -9,10 +9,15 @@ $result = $mMuaHang->thongKeMuaHang();
 $labels = [];
 $datas = [];
 
-foreach ($result as $row) {
-    $labels[] = $row['ngaydat'];
-    $datas[] = (int)$row['tongSoLuong'];
+if ($result && is_iterable($result)) {
+    foreach ($result as $row) {
+        $labels[] = $row['ngaydat'];
+        $datas[] = (int)$row['tongSoLuong'];
+    }
+} else {
+    echo "Không có dữ liệu thống kê hoặc truy vấn bị lỗi.";
 }
+
 
 $label_json = json_encode($labels);
 $data_json = json_encode($datas);

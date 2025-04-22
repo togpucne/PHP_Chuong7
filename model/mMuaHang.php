@@ -4,21 +4,21 @@
   }
 
  class mMuaHang{
-    public function thongKeMuaHang(){
-        $p = new cKetNoi();
-        $conn = $p->ketNoi();
-        $sql = "SELECT dh.ngaydathang as ngaydat , sum(ct.soLuong) as tongSoLuong
-        FROM dathang_chitiet ct, dathang dh 
-        WHERE ct.iddh = dh.iddh
-        GROUP BY dh.ngaydathang
-        ";
-        $result = $conn->query($sql);
-        if($result->num_rows>0){
-            return $result;
-        }else{
-            return false;
-        }
+  public function thongKeMuaHang() {
+  $p = new cKetNoi();
+  $conn = $p->ketNoi();
+  $sql = "SELECT ngaydathang as ngaydat, SUM(soluong) as tongSoLuong 
+          FROM dathang_chitiet 
+          JOIN dathang ON dathang_chitiet.iddh = dathang.iddh 
+          GROUP BY ngaydathang";
+  $result = $conn->query($sql);
 
-    }
+  if ($result && $result->num_rows > 0) {
+      return $result;
+  }
+
+  return false;
+}
+
  }
 ?>

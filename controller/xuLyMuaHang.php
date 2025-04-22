@@ -57,17 +57,7 @@
     }
     $giohang = new mGioHang();
 
-    if (isset($_GET['idsp'])) {
-        $idsp_arr = explode(',', $_GET['idsp']); 
-        foreach ($idsp_arr as $id) {
-            $result = $giohang->deleteSPGioHang((int)$id);
-            if (!$result) {
-                echo '<script>alert("Xóa sản phẩm khỏi giỏ hàng không thành công");</script>';
-                return;
-            }
-            
-        }
-    }
+  
     
 
 
@@ -81,6 +71,18 @@
         return;
         
     }else{
+
+        if (isset($_GET['idsp'])) {
+            $idsp_arr = explode(',', $_GET['idsp']); 
+            foreach ($idsp_arr as $id) {
+                $result = $giohang->deleteSPGioHang((int)$id);
+                if (!$result) {
+                    echo '<script>alert("Xóa sản phẩm khỏi giỏ hàng không thành công");</script>';
+                    return;
+                }
+                
+            }
+        }
        
 
         echo '
