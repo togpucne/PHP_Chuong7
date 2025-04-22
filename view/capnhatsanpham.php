@@ -36,7 +36,9 @@
         $congty = $p->getCongTy();
 
         foreach ($congty as $index ) {
-            echo "<option value='" . $index['iddm'] . "'>" . $index['tendanhmuc'] . "</option>";
+             // Kiểm tra nếu iddm bằng idcm thì thêm thuộc tính selected vào
+            $selected = ($index['iddm'] == $row['iddm']) ? 'selected' : '';
+            echo "<option value='" . $index['iddm'] . "' $selected>" . $index['tendanhmuc'] . "</option>";
         }
         echo '</select><br>';
 
