@@ -13,7 +13,7 @@
             if ($resultCheck && $resultCheck->num_rows > 0) {
                 $row = $resultCheck->fetch_assoc();
                 $newSoLuong = $row['soluong'] + $soluong;
-                $newTongTien = ($gia - $giamgia) * $newSoLuong;
+                $newTongTien = ( $giamgia) * $newSoLuong;
         
                 $update = "UPDATE giohang 
                            SET soluong = '$newSoLuong', tongtien = '$newTongTien' 
@@ -21,6 +21,8 @@
         
                 return $conn->query($update);
             } else {
+               
+
                 $sql = "INSERT INTO giohang (idsp, tensp, gia, giamgia, soluong, tongtien, hinhanh, trangthai, idkh)
                         VALUES ('$idsp', '$tensp', '$gia', '$giamgia', '$soluong', '$tongtien', '$hinhanh', 0, '$idkh')";
         

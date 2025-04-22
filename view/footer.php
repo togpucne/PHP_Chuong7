@@ -1,7 +1,7 @@
 
 <footer class="inner-footer">
                 <center>
-                    <h5>Footer</h5>
+                    <h5>22655111 - NGUYEN TRONG PHUC</h5>
                 </center>
             </footer>
         </div>

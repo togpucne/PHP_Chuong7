@@ -113,8 +113,8 @@
                   
                 </td>';
                 echo '<td>' . $row['tensp'] . '</td>';
-                echo '<td>' . $row['gia'] . '</td>';
-                echo '<td>' . $row['giamgia'] . '</td>';
+                echo '<td>' . number_format($row['gia'], 0, ',', '.')  . '</td>';
+                echo '<td>' .   number_format($row['giamgia'], 0, ',', '.')   . '</td>';
                 echo '<td>' . $row['mota'] . '</td>';
                 echo '<td>' . $row['soLuong'] . '</td>';
                 echo '<td>

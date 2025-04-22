@@ -34,8 +34,8 @@
                         echo '<a href="chitietsanpham.php?idsp='.$row['idsp'].'">';
                         echo '<img class="product-image" src="' . $row['hinh'] . '" style="width: 100%; object-fit: cover;">';
                         echo '<p class="product-name" style="font-size: 14px; font-weight: bold; margin: 5px 0;">' . $row['tensp'] . '</p>';
-                        echo '<p class="product-discount" style="color: red; font-size: 12px;">Giá: ' . $row['giamgia'] . ' VNĐ</p>';
-                        echo '<p class="product-price" style="color: #ccc; font-size: 13px;"> ' . $row['gia'] . ' VNĐ</p>';
+                        echo '<p class="product-discount" style="color: red; font-size: 12px;">Giá: ' . number_format( $row['giamgia'] , 0, ',', '.'). ' VNĐ</p>';
+                        echo '<p class="product-price" style="color: #ccc; font-size: 13px;"> ' .  number_format($row['gia'], 0, ',', '.') . ' VNĐ</p>';
                         echo '</a>';
                         echo '</div>';
                     }
@@ -49,8 +49,8 @@
                         echo '<a href="chitietsanpham.php?idsp='.$row['idsp'].'">';
                         echo '<img class="product-image" src="' . $row['hinh'] . '" style="width: 100%; object-fit: cover;">';
                         echo '<p class="product-name" style="font-size: 14px; font-weight: bold; margin: 5px 0;">' . $row['tensp'] . '</p>';
-                        echo '<p class="product-discount" style="color: red; font-size: 12px;">Giá: ' . $row['giamgia'] . ' VNĐ</p>';
-                        echo '<p class="product-price" style="color: #ccc; font-size: 13px;"> ' . $row['gia'] . ' VNĐ</p>';
+                        echo '<p class="product-discount" style="color: red; font-size: 12px;">Giá: ' .  number_format( $row['giamgia'] , 0, ',', '.') . ' VNĐ</p>';
+                        echo '<p class="product-price" style="color: #ccc; font-size: 13px;"> ' .  number_format($row['gia'], 0, ',', '.')  . ' VNĐ</p>';
                         echo '</a>';
                         echo '</div>';
                     }

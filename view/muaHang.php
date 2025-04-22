@@ -15,6 +15,12 @@
         if (!class_exists('xuLyTaiKhoan')) {
             include './controller/xuLyTaiKhoan.php';
         }
+        if(!class_exists('mGioHang')){
+            include './model/mGioHang.php';
+        }
+    
+        $mGioHang = new mGioHang();
+        $total = $mGioHang->toTalPrice();
 
         $p = new xuLyTaiKhoan();
         $result = $p->cXuLyTaiKhoan();
@@ -70,7 +76,8 @@
 
             $stt = 1;
             while ($row = mysqli_fetch_assoc($result)) {
-                $tongtien = ($row['gia'] - $row['giamgia']) * $row['soluong'];
+
+                $tongtien = ( $row['giamgia']) * $row['soluong'];
                 echo '<tr>';
                 echo '<td>' . $stt++ . '</td>';
                 echo '<td><img src="' . $row['hinhanh'] . '" alt="' . $row['tensp'] . '" width="60"></td>';
@@ -87,6 +94,8 @@
                 echo '</tr>';
             }
             echo '</table>';
+            echo '<h3>Tổng tiền: '. number_format($total, 0, ',', '.').' VND</h3>';
+
             echo '<center style="margin-top: 30px"><a href="index.php?act=xuLyMuaHang" class="btn btn-warning" )">Đặt hàng</a></center>';
         } else {
             echo '<p>Giỏ hàng của bạn đang trống.</p>';

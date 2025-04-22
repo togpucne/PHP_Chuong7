@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Judoit</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -24,6 +24,6 @@
         <div class="inner-wrap">
             <header class="inner-header">
                 <center>
-                    <h5>Banner</h5>
+                    <h5>JUDOIT STORE</h5>
                 </center>
             </header>

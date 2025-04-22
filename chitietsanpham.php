@@ -27,8 +27,8 @@ include './view/menu.php';
                 
                 echo '<div class="inner-right">';
                 echo '<p class="product-title">' . $row['tensp'] . '</p>';
-                echo '<p class="product-cost">Giá khuyến mãi: ' . $row['giamgia'] . ' VND</p>';
-                echo '<p class="product-discount">Giá gốc: ' . $row['gia'] . ' VND</p>';
+                echo '<p class="product-cost">Giá khuyến mãi: ' .   number_format($row['giamgia'], 0, ',', '.')   . ' VND</p>';
+                echo '<p class="product-discount">Giá gốc: ' . number_format($row['gia'], 0, ',', '.')  . ' VND</p>';
                 echo '<p class="product-desc">' . $row['mota'] . '</p>';
                                 echo '<input type="hidden" name="tensp" value="' . htmlspecialchars($row['tensp']) . '">';
                 echo '<input type="hidden" name="gia" value="' . $row['gia'] . '">';

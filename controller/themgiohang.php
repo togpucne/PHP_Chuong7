@@ -16,7 +16,7 @@
         $giamgia = $_POST['giamgia'];
         $soluong = $_POST['soLuong'];
         $hinh = $_POST['hinh'];
-        $tongtien = ($giamgia - $gia) * $soluong;
+        $tongtien = ( $giamgia) * $soluong;
         $idkh = $_COOKIE['idkh'];
 
         if (empty($_GET['idsp']) || empty($_POST['tensp']) || empty($_POST['gia']) || empty($_POST['giamgia']) || empty($_POST['soLuong']) || empty($_POST['hinh'])) {
