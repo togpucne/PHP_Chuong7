@@ -7,7 +7,7 @@ class cNguoiDung
     
     public function cDangKy($name, $password)
     {
-        $password = md5($password);
+        $password = md5($password);  
         $sql = "INSERT INTO taikhoan(username, password, phanquyen) VALUES('$name', '$password', 'user')";
         $p = new cKetNoi();
         $conn = $p->ketNoi();
@@ -17,6 +17,19 @@ class cNguoiDung
         }else{
             return false;
         }
+    }
+
+    public function checkNameDangKy($name){
+        $p = new cKetNoi();
+        $conn = $p->ketNoi();
+        $checkName = "SELECT * FROM taikhoan where username = '$name'";
+        $result = $conn->query($checkName);
+        if($result->num_rows>0){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 
 
