@@ -42,6 +42,18 @@
             return false;
         }
 
+        
+        public function getSPGioHang($idsp){
+            $p = new cKetNoi();
+            $conn = $p->ketNoi();
+            $sql = "SELECT * FROM giohang where idsp = '$idsp' and trangthai = 0";
+            $result = $conn->query($sql);
+            if($result->num_rows>0){
+                return $result;
+            }
+            return false;
+        }
+
         public function xoaGioHang($idsp){
             $p = new cKetNoi();
             $conn = $p->ketNoi();
@@ -54,11 +66,10 @@
         }
 
 
-        public function updateGioHang($idsp, $soluong, $tongtien, $gia, $giamgia){
+        public function updateGioHang($idsp, $soluong, $tongtien){
             $p = new cKetNoi();
-            $conn = $p->ketNoi();
-            $tongtien = ($gia - $giamgia )* $soluong;
-            $sql = "UPDATE giohang SET soluong = '$soluong', tongtien = '$tongtien' WHERE idsp = '$idsp'";
+            $conn = $p->ketNoi(); 
+            $sql = "UPDATE giohang SET soluong = $soluong, tongtien = $tongtien WHERE idsp = '$idsp'";
             $result = $conn->query($sql);
             if($result){
                 return true;

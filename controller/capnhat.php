@@ -15,12 +15,12 @@
                         </script>';
                             return ;
                         }
-                        $tongtien =0;
+
                         $gia  = 0;
                         $giamgia = 0;
                  
 
-                        $result1 = $p->getGioHang($idsp);
+                        $result1 = $p->getSPGioHang($idsp);
                         if($result1){
                             while($row= $result1->fetch_assoc()){
                                 $gia = $row['gia'];
@@ -29,10 +29,11 @@
 
                             }
                         }
+                        $tongtien = $soluong *  ($giamgia );
 
 
 
-                        $result = $p->updateGioHang($idsp, $soluong, $tongtien, $gia, $giamgia);
+                        $result = $p->updateGioHang($idsp, $soluong, $tongtien );
                         if($result){
                             echo '<script>alert("Cập nhật thành công");
                                 history.back();
@@ -42,12 +43,6 @@
                             history.back();
                         </script>'; 
                         }
-
-
-                        
-                        
-                    
-                    
                     
                     ?>
                     
