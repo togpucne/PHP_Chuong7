@@ -25,6 +25,22 @@
 
     
         }
+
+
+        public function deleteSPGioHang($idsp){
+            $p = new cKetNoi();
+            $conn = $p->ketNoi();
+            $sql = "DELETE FROM giohang where idsp ='$idsp'"; 
+            $result = $conn->query($sql);
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+
+
+        }
+
     }
 
 

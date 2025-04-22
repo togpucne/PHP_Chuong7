@@ -52,18 +52,37 @@
         return;
         
     }
+    if(!class_exists('mGioHang')){
+        include './model/mGioHang.php';
+    }
+    $giohang = new mGioHang();
+
+    if (isset($_GET['idsp'])) {
+        $idsp_arr = explode(',', $_GET['idsp']); 
+        foreach ($idsp_arr as $id) {
+            $result = $giohang->deleteSPGioHang((int)$id);
+            if (!$result) {
+                echo '<script>alert("Xóa sản phẩm khỏi giỏ hàng không thành công");</script>';
+                return;
+            }
+            
+        }
+    }
+    
 
 
     $result2 = $p->cDatHangChiTiet($result1, $idkh);
     if(!$result2){
         echo '
         <script>alert("Đặt hàng chi tiết không thành công");
-            // history.back();
+            history.back();
         </script>
         ';
         return;
         
     }else{
+       
+
         echo '
         <script>alert("Đặt hàng thành công");
         window.location.href="index.php";

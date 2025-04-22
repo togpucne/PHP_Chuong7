@@ -92,12 +92,19 @@
 
 
                 echo '</tr>';
+
+                $list_idsp[] = $row['idsp']; 
+                $idsp_string = implode(',', $list_idsp);
+
+
             }
             echo '</table>';
             echo '<h3>Tổng tiền: '. number_format($total, 0, ',', '.').' VND</h3>';
 
-            echo '<center style="margin-top: 30px"><a href="index.php?act=xuLyMuaHang" class="btn btn-warning" )">Đặt hàng</a></center>';
-        } else {
+            echo '<center style="margin-top: 30px">
+            <a href="index.php?act=xuLyMuaHang&idsp=' . $idsp_string . '" class="btn btn-warning">Đặt hàng</a>
+          </center>';
+            } else {
             echo '<p>Giỏ hàng của bạn đang trống.</p>';
         }
         ?>
