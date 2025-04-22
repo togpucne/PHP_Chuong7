@@ -7,6 +7,18 @@
     $p = new cNguoiDung();
     $name = $_POST['name'];
     $password = $_POST['password'];
+
+    $result = $p->checkNameDangKy($name);
+    if($result){
+        echo '<script>
+        alert("Tên này bạn đã đăng ký rồi");
+        history.back();        
+        </script>';
+        return;
+    }
+
+
+
     if(!empty($name) && !empty($password)){
         $result = $p->cDangKy($name, $password);
         if($result){
