@@ -32,11 +32,14 @@ main .inner-right .product a {
   text-align: center;
   
 }
+
 .inner-main .inner-left ul  li{
-    background-color: #ccc;
+    background-color: #8E1616;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #8E1616;
     border-radius: 5px;
+    padding: 8px;
+    color: white;
 
  }
 .inner-main .inner-left ul li a {
@@ -156,4 +159,43 @@ main .inner-right .product a {
 }
 th, td{
   border: 1px solid #000;
+}
+/* header  */
+.inner-header{
+  background-color: #000000;
+  color: whitesmoke;
+ 
+}
+.inner-header h5{
+  font-size: 30px;
+  font-weight: bold;
+}
+ /* end header */
+
+ /* footer  */
+.inner-footer{
+  background-color: #000000;
+  color: whitesmoke;
+  margin-bottom: 30px
+}
+.inner-footer h5{
+  font-size: 30px;
+  font-weight: bold;
+}
+/* end footer  */
+
+
+/* main left */
+.inner-main .inner-left{
+  background-color: #F8EEDF;
+}
+
+
+
+/* end main left */
+
+.inner-main .inner-left ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }

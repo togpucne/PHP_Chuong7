@@ -1,6 +1,6 @@
 <div class="inner-right">
-    <center>
-        <h5>Giỏ Hàng Của Bạn</h5>
+    <center style="margin: 20px 0px;">
+        <h2>Giỏ Hàng Của Bạn</h2>
     </center>
     <?php
     if (!class_exists('cGioHang')) {
@@ -32,14 +32,14 @@
                     <th>Tổng tiền</th>
                     <th>Hành động</th>
                   </tr>';
-
+        
         $stt = 1;
         while ($row = mysqli_fetch_assoc($result)) {
             $tongtien = ($row['giamgia']) * $row['soluong'];
             echo '<tr>';
             echo '<td>' . $stt++ . '</td>';
-            echo '<td><img src="' . $row['hinhanh'] . '" alt="' . $row['tensp'] . '" width="60"></td>';
-            echo '<td>' . $row['tensp'] . '</td>';
+            echo '<td><a href="chitietsanpham.php?idsp=4"><img src="' . $row['hinhanh'] . '" alt="' . $row['tensp'] . '" width="60"></a></td>';
+            echo '<td><a href="chitietsanpham.php?idsp=4" style="text-decoration: none; ">' . $row['tensp'] . '</a></td>';
             echo '<td>' . number_format($row['gia'], 0, ',', '.') . ' VND</td>';
             echo '<td>' . number_format($row['giamgia'], 0, ',', '.') . ' VND</td>';
             $id_input = 'qty_' . $row['idsp'];

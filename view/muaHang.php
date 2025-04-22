@@ -1,6 +1,6 @@
 <div class="inner-right">
     <center>
-        <h4>Mua hàng </h4>
+        <h2>Mua hàng </h2>
     </center>
     <!-- Address  -->
     <div class="address">

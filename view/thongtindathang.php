@@ -1,5 +1,5 @@
 <div class="inner-right">
-    <center><h5>Thông tin đặt hàng</h5></center>
+    <center style="margin: 20px 0px;"><h2>Thông tin cá nhân</h2></center>
     <?php 
         if(!class_exists("mKhachHang")){
             include './model/mKhachHang.php';
@@ -51,7 +51,7 @@
             <input type="tel" id="dienthoai" name="dienthoai" required style="padding: 8px; border: 1px solid #ccc; border-radius: 5px;" placeholder="Nhập số điện thoại">
             
 
-            <input type="submit" value="Đặt hàng" style="padding: 8px; border: 1px solid #ccc; border-radius: 5px; background-color: #ccc; cursor: pointer;">
+            <input type="submit" value="Xác nhận" style="padding: 8px; border: 1px solid #ccc; border-radius: 5px; background-color: #ccc; cursor: pointer;">
         </form>';
 
     }

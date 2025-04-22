@@ -10,7 +10,7 @@
 
         }
   
-        echo '<center><h5>Danh Sách Sản Phẩm</h5></center>';
+        echo '<center style="margin: 20px 0px;"><h2>Danh Sách Sản Phẩm</h2></center>';
 
         if (!class_exists('cSanPham')) {
             include './model/cSanPham.php';
